@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferma NFT Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://getgems.io/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://getgems.io/favicon.ico" alt="Getgems Logo" class="logo">
+            <h1>Коллекция Ferma</h1>
+        </div>
+        <div class="collection-info">
+            <p><i class="fas fa-wallet"></i> Адрес коллекции: 
+                <span id="collection-address">EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol</span>
+                <button onclick="copyAddress()"><i class="far fa-copy"></i></button>
+            </p>
+            <a href="https://getgems.io/ferma" target="_blank" class="btn">
+                <i class="fas fa-external-link-alt"></i> Открыть в Getgems
+            </a>
+        </div>
+    </header>
+
+    <div class="controls">
+        <div id="counter">Загрузка данных...</div>
+        <div class="loader" id="loader"></div>
+    </div>
+
+    <div id="gallery" class="gallery-container">
+        <!-- NFT будут здесь -->
+    </div>
+
+    <footer>
+        <p>Автоматически обновляется через <a href="https://tonapi.io/" target="_blank">TON API</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
