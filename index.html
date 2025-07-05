@@ -3,60 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferma NFT Gallery</title>
+    <title>Ferma NFT Gallery | Official Collection</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="https://getgems.io/favicon.ico">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <img src="https://getgems.io/favicon.ico" alt="Getgems Logo" class="logo">
-            <h1>Коллекция Ferma</h1>
-        </div>
-        <div class="collection-info">
-            <p><i class="fas fa-wallet"></i> Адрес коллекции: 
-                <span id="collection-address">EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol</span>
-                <button onclick="copyAddress()"><i class="far fa-copy"></i></button>
-            </p>
-            <a href="https://getgems.io/ferma" target="_blank" class="btn">
-                <i class="fas fa-external-link-alt"></i> Открыть в Getgems
-            </a>
-        </div>
-    </header>
-
-    <section class="collection-details">
-        <div class="container">
-            <div class="collection-cover">
-                <img src="https://s.getgems.io/nft/c/668788b84c594bb5da15c1d8/edit/images/910335.png" alt="Ferma Collection Cover">
+        <div class="header-container">
+            <div class="branding">
+                <img src="https://getgems.io/favicon.ico" alt="Getgems Logo" class="logo">
+                <div>
+                    <h1>Ferma NFT Collection</h1>
+                    <p class="subtitle">Official TON Blockchain Gallery</p>
+                </div>
             </div>
-            <div class="collection-text">
-                <h2>О коллекции FERMA</h2>
-                <p>FERMA - первая коллекция NFT-аватаров от команды NET PRESENT VALUE. В коллекции представлены известные инвесторы и трейдеры в новых эксклюзивных образах. Каждый аватар уникален и имеет свой ранг и класс.</p>
+            
+            <div class="collection-info">
+                <div class="info-box">
+                    <i class="fas fa-wallet"></i>
+                    <div>
+                        <span class="info-label">Collection Address:</span>
+                        <span id="collection-address" class="monospace">EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol</span>
+                    </div>
+                    <button onclick="copyAddress()" class="copy-btn" title="Copy address">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
                 
-                <div class="social-links">
-                    <a href="https://t.me/Netpresentvalue" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="https://vk.com/netpresentvalue" target="_blank"><i class="fab fa-vk"></i></a>
-                    <a href="https://twitter.com/NPVproject" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://discord.gg/WcuumfuUen" target="_blank"><i class="fab fa-discord"></i></a>
+                <div class="actions">
+                    <a href="https://getgems.io/ferma" target="_blank" class="btn primary">
+                        <i class="fas fa-external-link-alt"></i> View on Getgems
+                    </a>
+                    <a href="#" class="btn secondary" id="refresh-btn">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <div class="controls">
-        <div id="counter">Загрузка данных...</div>
-        <div class="loader" id="loader"></div>
+    <div class="stats-container">
+        <div class="stat-card">
+            <i class="fas fa-database"></i>
+            <div>
+                <span class="stat-value" id="total-nfts">0</span>
+                <span class="stat-label">Total NFTs</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-sync-alt"></i>
+            <div>
+                <span class="stat-value" id="last-update">--:--</span>
+                <span class="stat-label">Last Updated</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-clock"></i>
+            <div>
+                <span class="stat-value" id="next-update">12:00</span>
+                <span class="stat-label">Next Update</span>
+            </div>
+        </div>
     </div>
 
-    <div id="gallery" class="gallery-container">
+    <div class="controls">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Search by name or ID...">
+        </div>
+        <div class="view-controls">
+            <button id="grid-view" class="view-btn active"><i class="fas fa-th"></i></button>
+            <button id="list-view" class="view-btn"><i class="fas fa-list"></i></button>
+        </div>
+    </div>
+
+    <div id="gallery" class="gallery-container grid-view">
         <!-- NFT будут здесь -->
     </div>
 
+    <div id="loader" class="loader-container">
+        <div class="loader"></div>
+        <p>Loading NFT collection...</p>
+    </div>
+
     <footer>
-        <p>Автоматически обновляется через <a href="https://tonapi.io/" target="_blank">TON API</a></p>
-        <p>Коллекция Ferma &copy; 2024</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://getgems.io/favicon.ico" alt="Getgems Logo">
+                <span>Ferma NFT Collection</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://ton.org/" target="_blank">TON Blockchain</a>
+                <a href="https://tonapi.io/" target="_blank">TON API</a>
+                <a href="https://getgems.io/" target="_blank">Getgems</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2023 Ferma NFT Collection. All rights reserved.</p>
+                <p>Automatically updated via <a href="https://tonapi.io/" target="_blank">TON API</a></p>
+            </div>
+        </div>
     </footer>
+
+    <div id="notification" class="notification">Address copied to clipboard!</div>
 
     <script src="script.js"></script>
 </body>
