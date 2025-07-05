@@ -4,33 +4,31 @@
 **Collection:** [Ferma on Getgems](https://getgems.io/ferma)  
 **Collection Address:** `EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol`
 
-## Overview
-Professional NFT gallery for the Ferma collection on TON Blockchain. Features:
+## What's New
+- Added collection cover image support
+- Dynamic loading of collection metadata (name, description, logo)
+- Improved social links in footer
+- Better error handling for images
+- Enhanced mobile responsiveness
 
-✅ Real-time updates  
-✅ Daily auto-refresh at 12:00 PM  
-✅ Responsive design (Grid/List views)  
-✅ Search functionality  
-✅ Caching for faster loading  
-✅ Collection stats tracking  
-✅ Secure API access via proxy
+## Technical Updates
+1. **Collection Metadata**:
+   - Loads collection name, description, logo and cover image
+   - Fallback to default values if metadata unavailable
 
-## Technical Features
-- **Secure API Access**: All requests go through a secure Cloudflare Worker proxy
-- **Smart Caching**: 1-hour cache to reduce API calls and improve performance
-- **Modern UI**: Professional design with Montserrat/Roboto fonts and elegant cards
-- **Optimized Performance**: Lazy loading, efficient rendering, and error handling
-- **Daily Auto-Refresh**: Automatically updates collection daily at 12:00 PM
+2. **Cover Image**:
+   - Added as header background with dark overlay
+   - Smooth transition effect
+
+3. **Security**:
+   - API key remains protected via Cloudflare Worker
+   - All sensitive data stored in environment variables
+
+4. **Social Links**:
+   - Added Telegram and Twitter links to footer
+   - Responsive grid layout
 
 ## Setup
-1. Add Cloudflare Worker with TON API authorization
-2. Deploy to GitHub Pages
-3. Add `FERMA_API_KEY` to repository secrets
-
-## Architecture
-```mermaid
-graph TD
-    A[User Browser] --> B[GitHub Pages]
-    B --> C[Cloudflare Worker]
-    C --> D[TON API]
-    C --> E[Cache Storage]
+1. Ensure Cloudflare Worker is configured with your API key
+2. Deploy updated files to GitHub Pages
+3. Verify collection metadata loads correctly
