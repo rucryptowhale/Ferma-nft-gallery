@@ -45,12 +45,12 @@ h1, h2, h3, h4, h5 {
         url('https://s.getgems.io/nft/c/668788b84c594bb5da15c1d8/edit/images/1001488.png');
     background-size: cover;
     background-position: center;
-    height: 250px; /* Фиксированная высота шапки */
+    height: 300px; /* Увеличили высоту шапки */
 }
 
 .main-container {
     max-width: 1400px;
-    margin: -80px auto 0;
+    margin: -60px auto 0; /* Уменьшили наложение */
     padding: 0 25px;
     position: relative;
     z-index: 10;
@@ -537,15 +537,17 @@ footer {
 }
 
 .footer-copy p {
-    margin: 5px 0;
+    margin: 10px 0; /* Увеличили отступ между строками */
 }
 
 .footer-copy a {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
 }
 
 .footer-copy a:hover {
     color: white;
+    text-decoration: underline;
 }
 
 .notification {
@@ -618,7 +620,7 @@ footer {
 /* Для мобильных устройств */
 @media (max-width: 768px) {
     #collection-header {
-        height: 200px;
+        height: 250px;
     }
     
     .main-container {
@@ -709,5 +711,9 @@ footer {
     .footer-content {
         padding: 0 20px;
         gap: 30px;
+    }
+    
+    .footer-copy p {
+        margin: 15px 0; /* Больше отступ на мобильных */
     }
 }
