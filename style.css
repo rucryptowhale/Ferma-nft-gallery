@@ -1,6 +1,6 @@
 :root {
-    --primary: #2e7d32;
-    --primary-dark: #1b5e20;
+    --primary: #0088cc; /* Голубой TON вместо зеленого */
+    --primary-dark: #006699;
     --secondary: #37474f;
     --accent: #ff9800;
     --light: #f5f5f5;
@@ -8,7 +8,7 @@
     --gray: #eceff1;
     --text: #37474f;
     --text-light: #78909c;
-    --success: #4caf50;
+    --success: #0088cc; /* Голубой TON */
     --error: #f44336;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
@@ -45,12 +45,12 @@ h1, h2, h3, h4, h5 {
         url('https://s.getgems.io/nft/c/668788b84c594bb5da15c1d8/edit/images/1001488.png');
     background-size: cover;
     background-position: center;
-    height: 300px; /* Увеличили высоту шапки */
+    height: 350px; /* Увеличили высоту шапки */
 }
 
 .main-container {
     max-width: 1400px;
-    margin: -60px auto 0; /* Уменьшили наложение */
+    margin: -30px auto 0; /* Значительно уменьшили наложение */
     padding: 0 25px;
     position: relative;
     z-index: 10;
@@ -68,8 +68,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 150px; /* Увеличили логотип */
+    height: 150px;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     background: white;
@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: var(--primary);
+    background: var(--primary); /* Голубой цвет */
     border-radius: 50%;
     color: white;
     font-size: 1.5rem;
@@ -240,8 +240,8 @@ h1, h2, h3, h4, h5 {
 
 .stat-card i {
     font-size: 2.5rem;
-    color: var(--primary);
-    background: rgba(46, 125, 50, 0.1);
+    color: var(--primary); /* Голубой цвет */
+    background: rgba(0, 136, 204, 0.1); /* Голубой цвет */
     width: 80px;
     height: 80px;
     display: flex;
@@ -267,6 +267,7 @@ h1, h2, h3, h4, h5 {
 .controls {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 25px 35px;
     max-width: 1400px;
     margin: 0 auto 50px;
@@ -287,7 +288,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .search-box:focus-within {
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.3);
+    box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.3); /* Голубой цвет */
 }
 
 .search-box i {
@@ -308,6 +309,7 @@ h1, h2, h3, h4, h5 {
 .view-controls {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .view-btn {
@@ -326,6 +328,24 @@ h1, h2, h3, h4, h5 {
 }
 
 .view-btn.active, .view-btn:hover {
+    background: var(--primary); /* Голубой цвет */
+    color: white;
+}
+
+.refresh-btn {
+    padding: 15px 25px;
+    height: 60px;
+    border-radius: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gray);
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.refresh-btn:hover {
     background: var(--primary);
     color: white;
 }
@@ -413,7 +433,7 @@ h1, h2, h3, h4, h5 {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: var(--primary);
+    background: var(--primary); /* Голубой цвет */
     color: white;
     text-decoration: none;
     padding: 15px 25px;
@@ -443,8 +463,8 @@ h1, h2, h3, h4, h5 {
 .loader {
     width: 70px;
     height: 70px;
-    border: 7px solid rgba(46, 125, 50, 0.2);
-    border-top: 7px solid var(--primary);
+    border: 7px solid rgba(0, 136, 204, 0.2); /* Голубой цвет */
+    border-top: 7px solid var(--primary); /* Голубой цвет */
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -537,7 +557,7 @@ footer {
 }
 
 .footer-copy p {
-    margin: 10px 0; /* Увеличили отступ между строками */
+    margin: 10px 0;
 }
 
 .footer-copy a {
@@ -555,7 +575,7 @@ footer {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary);
+    background: var(--primary); /* Голубой цвет */
     color: white;
     padding: 20px 40px;
     border-radius: 12px;
@@ -602,7 +622,7 @@ footer {
 .error-message button {
     margin-top: 25px;
     padding: 16px 32px;
-    background: var(--primary);
+    background: var(--primary); /* Голубой цвет */
     color: white;
     border: none;
     border-radius: 10px;
@@ -624,7 +644,7 @@ footer {
     }
     
     .main-container {
-        margin-top: -50px;
+        margin-top: -20px;
         padding: 0 20px;
     }
     
@@ -636,8 +656,8 @@ footer {
     }
     
     .logo {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
     
     .social-links {
@@ -683,7 +703,8 @@ footer {
     }
     
     .view-controls {
-        align-self: center;
+        align-self: stretch;
+        justify-content: center;
     }
     
     .gallery-container {
@@ -714,6 +735,6 @@ footer {
     }
     
     .footer-copy p {
-        margin: 15px 0; /* Больше отступ на мобильных */
+        margin: 15px 0;
     }
 }
