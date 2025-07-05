@@ -12,97 +12,99 @@
     <link rel="icon" href="https://getgems.io/favicon.ico">
 </head>
 <body>
-    <header id="collection-header">
-        <div class="header-container">
-            <div class="branding">
-                <img id="collection-logo" src="https://s.getgems.io/nft/c/668788b84c594bb5da15c1d8/edit/images/910335.png" alt="Ferma Logo" class="logo">
-                <div class="branding-text">
-                    <h1 id="collection-name">FERMA NFT Collection</h1>
-                    <p id="collection-description" class="subtitle">The first collection of NFT avatars from the NET PRESENT VALUE team</p>
-                    
-                    <div class="social-links">
-                        <a href="https://discord.gg/WcuumfuUen" target="_blank" title="Discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="https://vk.com/netpresentvalue" target="_blank" title="VK">
-                            <i class="fab fa-vk"></i>
-                        </a>
-                        <a href="https://x.com/NPVproject" target="_blank" title="X (Twitter)">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="https://t.me/netpresentvalue" target="_blank" title="Telegram">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                    </div>
+    <!-- Только фоновая картинка в шапке -->
+    <header id="collection-header"></header>
+
+    <!-- Основной контент под шапкой -->
+    <div class="main-container">
+        <div class="branding">
+            <img id="collection-logo" src="https://s.getgems.io/nft/c/668788b84c594bb5da15c1d8/edit/images/910335.png" alt="Ferma Logo" class="logo">
+            <div class="branding-text">
+                <h1 id="collection-name">FERMA NFT Collection</h1>
+                <p id="collection-description" class="subtitle">The first collection of NFT avatars from the NET PRESENT VALUE team</p>
+                
+                <div class="social-links">
+                    <a href="https://vk.com/netpresentvalue" target="_blank" title="VK">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                    <a href="https://x.com/NPVproject" target="_blank" title="X (Twitter)">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://t.me/netpresentvalue" target="_blank" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://discord.gg/WcuumfuUen" target="_blank" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
                 </div>
+            </div>
+        </div>
+        
+        <div class="collection-info">
+            <div class="info-box">
+                <i class="fas fa-wallet"></i>
+                <div>
+                    <span class="info-label">Collection Address:</span>
+                    <span id="collection-address" class="monospace">EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol</span>
+                </div>
+                <button onclick="copyAddress()" class="copy-btn" title="Copy address">
+                    <i class="far fa-copy"></i>
+                </button>
             </div>
             
-            <div class="collection-info">
-                <div class="info-box">
-                    <i class="fas fa-wallet"></i>
-                    <div>
-                        <span class="info-label">Collection Address:</span>
-                        <span id="collection-address" class="monospace">EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol</span>
-                    </div>
-                    <button onclick="copyAddress()" class="copy-btn" title="Copy address">
-                        <i class="far fa-copy"></i>
-                    </button>
-                </div>
-                
-                <div class="actions">
-                    <a href="https://getgems.io/ferma" target="_blank" class="btn primary">
-                        <i class="fas fa-external-link-alt"></i> View on Getgems
-                    </a>
-                    <a href="#" class="btn secondary" id="refresh-btn">
-                        <i class="fas fa-sync-alt"></i> Refresh
-                    </a>
+            <div class="actions">
+                <a href="https://getgems.io/ferma" target="_blank" class="btn primary">
+                    <i class="fas fa-external-link-alt"></i> View on Getgems
+                </a>
+                <a href="#" class="btn secondary" id="refresh-btn">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </a>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-database"></i>
+                <div>
+                    <span class="stat-value" id="total-nfts">0</span>
+                    <span class="stat-label">Total NFTs</span>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <div class="stats-container">
-        <div class="stat-card">
-            <i class="fas fa-database"></i>
-            <div>
-                <span class="stat-value" id="total-nfts">0</span>
-                <span class="stat-label">Total NFTs</span>
+            <div class="stat-card">
+                <i class="fas fa-sync-alt"></i>
+                <div>
+                    <span class="stat-value" id="last-update">--:--</span>
+                    <span class="stat-label">Last Updated</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <span class="stat-value" id="next-update">12:00</span>
+                    <span class="stat-label">Next Update</span>
+                </div>
             </div>
         </div>
-        <div class="stat-card">
-            <i class="fas fa-sync-alt"></i>
-            <div>
-                <span class="stat-value" id="last-update">--:--</span>
-                <span class="stat-label">Last Updated</span>
+
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search by name or ID...">
+            </div>
+            <div class="view-controls">
+                <button id="grid-view" class="view-btn active"><i class="fas fa-th"></i></button>
+                <button id="list-view" class="view-btn"><i class="fas fa-list"></i></button>
             </div>
         </div>
-        <div class="stat-card">
-            <i class="fas fa-clock"></i>
-            <div>
-                <span class="stat-value" id="next-update">12:00</span>
-                <span class="stat-label">Next Update</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="controls">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="search-input" placeholder="Search by name or ID...">
+        <div id="gallery" class="gallery-container grid-view">
+            <!-- NFT будут здесь -->
         </div>
-        <div class="view-controls">
-            <button id="grid-view" class="view-btn active"><i class="fas fa-th"></i></button>
-            <button id="list-view" class="view-btn"><i class="fas fa-list"></i></button>
+
+        <div id="loader" class="loader-container">
+            <div class="loader"></div>
+            <p>Loading NFT collection...</p>
         </div>
-    </div>
-
-    <div id="gallery" class="gallery-container grid-view">
-        <!-- NFT будут здесь -->
-    </div>
-
-    <div id="loader" class="loader-container">
-        <div class="loader"></div>
-        <p>Loading NFT collection...</p>
     </div>
 
     <footer>
@@ -117,18 +119,20 @@
                     <a href="https://ton.org/" target="_blank">TON Blockchain</a>
                     <a href="https://tonapi.io/" target="_blank">TON API</a>
                     <a href="https://getgems.io/" target="_blank">Getgems</a>
+                    <a href="https://tonviewer.com/EQC9v_GSW1XcZEDb4SET51NhO7snQXfs81ltzyMtcoY4v0ol" target="_blank">Tonviewer</a>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Community</h4>
-                    <a href="https://discord.gg/WcuumfuUen" target="_blank"><i class="fab fa-discord"></i> Discord</a>
                     <a href="https://vk.com/netpresentvalue" target="_blank"><i class="fab fa-vk"></i> VK</a>
-                    <a href="https://x.com/NPVproject" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+                    <a href="https://x.com/NPVproject" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
                     <a href="https://t.me/netpresentvalue" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="https://discord.gg/WcuumfuUen" target="_blank"><i class="fab fa-discord"></i> Discord</a>
                 </div>
             </div>
             <div class="footer-copy">
-                <p>&copy; 2023 Ferma NFT Collection. All rights reserved.</p>
+                <p>&copy; 2023 Ferma NFT Collection.</p>
+                <p>All rights reserved.</p>
                 <p>Automatically updated via <a href="https://tonapi.io/" target="_blank">TON API</a></p>
             </div>
         </div>
