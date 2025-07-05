@@ -18,7 +18,6 @@ const SEARCH_INPUT = document.getElementById('search-input');
 const GRID_VIEW_BTN = document.getElementById('grid-view');
 const LIST_VIEW_BTN = document.getElementById('list-view');
 const NOTIFICATION = document.getElementById('notification');
-const COLLECTION_HEADER = document.getElementById('collection-header');
 
 // ===== СОСТОЯНИЕ =====
 let nftItems = [];
